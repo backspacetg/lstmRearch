@@ -1,0 +1,6 @@
+scale rate = 1.0: correct rate = 0.91
+scale rate = 1.05: correct rate = 0.84375
+scale rate = 1.1: correct rate = 0.847
+scale rate = 1.2: correct rate = 0.81275
+scale rate = 1.5: correct rate = 0.78525
+scale rate = 1.8: correct rate = 0.75
