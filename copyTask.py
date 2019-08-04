@@ -76,10 +76,10 @@ if __name__ == '__main__':
     testInputs = testInputs.to(device)
     testOutputs = testOutputs.to(device)
     #可视化
-    vis = visdom.Visdom(env=u'copyTask') #指定字符串为Unicode对象
-    vis.close()
+    #vis = visdom.Visdom(env=u'copyTask') #指定字符串为Unicode对象
+    #vis.close()
 
-    for epoch in range(50): #遍历数据集
+    for epoch in range(90): #遍历数据集
         print('in epoch ',epoch)
         for i in range(trainSize//batchSize):
             loss = 0
@@ -110,9 +110,9 @@ if __name__ == '__main__':
             if(i%100==0):
                 print('till train ',(trainSize//batchSize)*epoch+i,': loss=',loss)
                 x= (trainSize//batchSize) * epoch + i
-                logx = math.log10(x+1)
-                vis.line(X=t.Tensor([logx]),Y=loss.unsqueeze(0),win='loss2',update='append')
-                vis.line(X=t.Tensor([x]), Y=loss.unsqueeze(0), win='loss', update='append')
+                #logx = math.log10(x+1)
+                #vis.line(X=t.Tensor([logx]),Y=loss.unsqueeze(0),win='loss2',update='append')
+                #vis.line(X=t.Tensor([x]), Y=loss.unsqueeze(0), win='loss', update='append')
 
     correctNumber = 0
     #正确率测试
@@ -128,8 +128,8 @@ if __name__ == '__main__':
     print('correctRate: ',correctNumber/(testSize*(T+20)))
 
     #保存模型
-    t.save(net.state_dict(),'save/net1_05.pkl')
-    t.save(optimizer.state_dict(),'save/optimizer1_05 .pkl')
+    t.save(net.state_dict(),'save/net0_95.pkl')
+    t.save(optimizer.state_dict(),'save/optimizer0_95.pkl')
 
 
 

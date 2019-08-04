@@ -123,14 +123,3 @@ if __name__ == '__main__':
         correct += t.sum((predicted==labels))
 
     print('correctRate: ',100*correct.data.numpy()/total,'%')
-
-
-
-
-
-
-
-
-
-
-
